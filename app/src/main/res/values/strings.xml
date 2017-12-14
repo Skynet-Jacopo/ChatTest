@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ChatTest</string>
+    <string name="firebase_root_path">firebase_v4_web_new_4</string>
+    <string name="firebase_cloud_messaging_server_key">AAAA28fuJ2w:APA91bE6zAyJw1oTxMBWApg9K7vuxGogWJrfhsY8_LAGooSkAIKds7D7ziHPjPeX7az1Bd3FxT_L8kMD7QP7i9C98fQvWeFxTFLwzHkMK-WEJkGZvm6NNAuUw_U9kO6cy8_mrWf7O_Nv</string>
+</resources>

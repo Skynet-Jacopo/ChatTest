@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.example.ly.chattest"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+    signingConfigs {
+        config {
+            keyAlias 'chattest'
+            keyPassword '123456'
+            storeFile file('chattest.jks')
+            storePassword '123456'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+//    compile 'com.google.firebase:firebase-auth:11.0.4'
+//    compile 'com.google.firebase:firebase-core:11.0.4'
+//    compile 'com.google.firebase:firebase-messaging:11.0.4'
+//    compile 'com.facebook.android:facebook-android-sdk:4.6.0'
+//    compile 'com.google.android.gms:play-services-maps:11.0.4'
+//    compile 'com.firebase:firebase-jobdispatcher:0.6.0'
+//    compile 'com.google.firebase:firebase-database:11.0.4'
+    compile 'com.firebase:firebase-client-android:2.1.2+'
+
+    compile 'co.chatsdk.chatsdk:chat-sdk-core:4.0.6'
+    compile 'co.chatsdk.chatsdk:chat-sdk-ui:4.0.6'
+    compile 'co.chatsdk.chatsdk:chat-sdk-firebase-adapter:4.0.6'
+    compile 'co.chatsdk.chatsdk:chat-sdk-firebase-file-storage:4.0.6'
+    compile 'co.chatsdk.chatsdk:chat-sdk-firebase-push:4.0.6'
+    compile 'com.android.support:multidex:1.0.1'
+    testCompile 'junit:junit:4.12'
+}
+apply plugin: 'com.google.gms.google-services'
